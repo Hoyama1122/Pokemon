@@ -35,9 +35,6 @@ const App = () => {
     if (number < 1025) setnumber((number) => number + 1);
   };
 
-  const handleInputChange = (event) => {
-    setInput(event.target.value);
-  };
 
   const handleSearch = () => {
     const parsedNumber = parseInt(input);
@@ -101,7 +98,7 @@ const App = () => {
             <div className="flex justify-center items-center mt-8">
               <input
                 value={input}
-                onChange={handleInputChange}
+                onChange={(e) => setInput(e.target.value)}
                 type="text"
                 placeholder="1025 ตัว"
                 className="w-full max-w-md p-3 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
